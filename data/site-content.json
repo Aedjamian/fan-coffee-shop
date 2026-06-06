@@ -1,0 +1,315 @@
+{
+  "brand": {
+    "nameStrong": "F.A.N",
+    "nameSub": "Coffee Shop"
+  },
+  "hero": {
+    "tag": "Home of Kevin's Homefries",
+    "titleBefore": "Good coffee.",
+    "titleEmphasis": "Great mornings.",
+    "description": "A neighborhood coffee shop serving fresh brews, hearty breakfast, and the homefries everyone comes back for.",
+    "primaryCta": "View menu",
+    "secondaryCta": "Hours & location"
+  },
+  "menuSection": {
+    "heading": "Menu",
+    "subtitle": "From Kevin's homefries to lunch specials — everything on our board, in one place."
+  },
+  "menuCategories": [
+    {
+      "id": "breakfast-platters",
+      "title": "Breakfast Platters",
+      "subtitle": "All platters come with homefries and bread.",
+      "items": [
+        {
+          "id": "bp-2-eggs",
+          "name": "2 Eggs",
+          "price": "$6.50"
+        },
+        {
+          "id": "bp-2-eggs-meat",
+          "name": "2 Eggs with Meat",
+          "price": "$8.50",
+          "description": "Choice of bacon, ham, or sausage"
+        },
+        {
+          "id": "bp-hash",
+          "name": "Corned Beef Hash",
+          "price": "$9.00"
+        },
+        {
+          "id": "bp-omelette",
+          "name": "Omelette",
+          "price": "$11.00",
+          "description": "Western, ham & cheese, mushroom, or spinach & Swiss"
+        },
+        {
+          "id": "bp-pancakes",
+          "name": "Pancakes",
+          "price": "$6.00"
+        },
+        {
+          "id": "bp-french-toast",
+          "name": "French Toast",
+          "price": "$6.00"
+        },
+        {
+          "id": "bp-fan-special",
+          "name": "F.A.N Special",
+          "price": "$8.00",
+          "description": "2 eggs, pancakes or French toast, and homefries"
+        }
+      ]
+    },
+    {
+      "id": "breakfast-sandwich",
+      "title": "Breakfast Sandwich",
+      "subtitle": "On a roll, made to order.",
+      "featured": true,
+      "items": [
+        {
+          "id": "bs-butter-roll",
+          "name": "1 Butter Roll",
+          "price": "$1.50"
+        },
+        {
+          "id": "bs-egg-roll",
+          "name": "1 Egg on a Roll",
+          "price": "$3.00"
+        },
+        {
+          "id": "bs-egg-potato",
+          "name": "1 Egg & Potato",
+          "price": "$4.00"
+        },
+        {
+          "id": "bs-2eggs-meat",
+          "name": "2 Eggs, Meat & Cheese on a Roll",
+          "price": "$6.50",
+          "description": "Bacon, ham, or sausage"
+        },
+        {
+          "id": "bs-kevin",
+          "name": "Kevin Special",
+          "price": "$7.50",
+          "description": "2 eggs, bacon, ham, or sausage & cheese on a roll with homefries"
+        },
+        {
+          "id": "bs-king-kong",
+          "name": "King Kong",
+          "price": "$8.50",
+          "description": "2 eggs, 2 meats, cheese on a roll with homefries"
+        }
+      ]
+    },
+    {
+      "id": "specials",
+      "title": "Specials",
+      "subtitle": "House favorites beyond breakfast.",
+      "items": [
+        {
+          "id": "sp-mf",
+          "name": "M&F Special",
+          "price": "$12.00",
+          "description": "2 eggs, steak, beans, plantains, sour cream"
+        },
+        {
+          "id": "sp-naely",
+          "name": "Naely Special",
+          "price": "$7.00",
+          "description": "3 chocolate French toast & berries"
+        },
+        {
+          "id": "sp-tacos",
+          "name": "3 Tacos",
+          "price": "$12.00",
+          "description": "Steak, chorizo, or carnitas"
+        },
+        {
+          "id": "sp-queso",
+          "name": "Quesadilla (Cheese)",
+          "price": "$6.00"
+        },
+        {
+          "id": "sp-queso-ch",
+          "name": "Quesadilla (Chicken)",
+          "price": "$8.00"
+        },
+        {
+          "id": "sp-queso-st",
+          "name": "Quesadilla (Steak)",
+          "price": "$9.00"
+        },
+        {
+          "id": "sp-emp",
+          "name": "Empanadas",
+          "price": "$5.00",
+          "description": "2 for $5"
+        },
+        {
+          "id": "sp-carne",
+          "name": "Carne Asada",
+          "price": "$15.00",
+          "description": "With rice & salad"
+        }
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "Lunch Specials",
+      "subtitle": "All lunch specials come with homefries.",
+      "items": [
+        {
+          "id": "ln-blt",
+          "name": "BLT",
+          "price": "$9.00"
+        },
+        {
+          "id": "ln-burger",
+          "name": "Burger Deluxe",
+          "price": "$11.00"
+        },
+        {
+          "id": "ln-chicken",
+          "name": "Chicken Burger",
+          "price": "$11.00"
+        },
+        {
+          "id": "ln-philly",
+          "name": "Philly Steak",
+          "price": "$11.00"
+        },
+        {
+          "id": "ln-grilled",
+          "name": "Grilled Cheese",
+          "price": "$6.00"
+        }
+      ]
+    },
+    {
+      "id": "extras",
+      "title": "Extras",
+      "subtitle": "Add-ons — update names and prices to match your board.",
+      "items": [
+        {
+          "id": "ex-bacon",
+          "name": "Extra Bacon",
+          "price": "$2.00"
+        },
+        {
+          "id": "ex-ham",
+          "name": "Extra Ham",
+          "price": "$2.00"
+        },
+        {
+          "id": "ex-sausage",
+          "name": "Extra Sausage",
+          "price": "$2.00"
+        },
+        {
+          "id": "ex-cheese",
+          "name": "Extra Cheese",
+          "price": "$1.50"
+        },
+        {
+          "id": "ex-egg",
+          "name": "Extra Egg",
+          "price": "$1.50"
+        },
+        {
+          "id": "ex-homefries",
+          "name": "Side Homefries",
+          "price": "$3.00"
+        },
+        {
+          "id": "ex-toast",
+          "name": "Extra Toast",
+          "price": "$1.50"
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "title": "Drinks",
+      "subtitle": "Coffee, cold drinks, and hot oatmeal.",
+      "items": [
+        {
+          "id": "dr-soda",
+          "name": "Can Soda",
+          "price": "$1.50"
+        },
+        {
+          "id": "dr-gatorade",
+          "name": "Gatorade",
+          "price": "$2.00"
+        },
+        {
+          "id": "dr-snapple",
+          "name": "Snapple",
+          "price": "$2.00"
+        },
+        {
+          "id": "dr-yoohoo",
+          "name": "Yoo-Hoo",
+          "price": "$2.00"
+        },
+        {
+          "id": "dr-coffee-m",
+          "name": "Coffee (Medium)",
+          "price": "$1.50"
+        },
+        {
+          "id": "dr-coffee-l",
+          "name": "Coffee (Large)",
+          "price": "$2.00"
+        },
+        {
+          "id": "dr-iced",
+          "name": "Iced Coffee (Large)",
+          "price": "$2.00"
+        },
+        {
+          "id": "dr-oat-s",
+          "name": "Hot Oatmeal (Small)",
+          "price": "$2.50"
+        },
+        {
+          "id": "dr-oat-l",
+          "name": "Hot Oatmeal (Large)",
+          "price": "$3.00"
+        }
+      ]
+    }
+  ],
+  "about": {
+    "heading": "About F.A.N",
+    "body": "F.A.N Coffee Shop is your stop for a strong cup, a warm plate, and Kevin's homefries done the way you remember — golden, seasoned, and worth the trip. Pull up a seat; we'll keep the coffee hot."
+  },
+  "catering": {
+    "eyebrow": "Catering services",
+    "heading": "Let us cater your next event",
+    "body": "F.A.N Coffee Shop provides full-service catering for businesses, organizations, and private gatherings in Oceanside and the surrounding communities. Our team prepares fresh breakfast and lunch fare — including Kevin's homefries and favorites from our regular menu — with reliable timing and consistent quality.",
+    "note": "Advance notice is recommended so we can confirm your menu, head count, and pickup or delivery details.",
+    "ctaLabel": "Call 516-536-1444 to inquire",
+    "bullets": [
+      "Office meetings and working breakfasts",
+      "Corporate and team events",
+      "Family celebrations and milestones",
+      "Community, school, and nonprofit functions"
+    ]
+  },
+  "visit": {
+    "heading": "Visit us",
+    "subtitle": "3207 Lawson Blvd in Oceanside — stop in for coffee and homefries.",
+    "hours": "Mon–Fri 7am – 2:30pm\nSat 7am – 3pm\nSun 8am – 2pm",
+    "addressLine1": "3207 Lawson Blvd",
+    "addressLine2": "Oceanside, NY 11572",
+    "mapsQuery": "3207+Lawson+Blvd+Oceanside+NY+11572",
+    "phone": "516-536-1444",
+    "phoneTel": "+15165361444"
+  },
+  "footer": {
+    "text": "F.A.N COFFEE SHOP — Home of Kevin's Homefries"
+  },
+  "customSections": []
+}
