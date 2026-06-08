@@ -1,6 +1,6 @@
 import { readFile, writeFile } from "fs/promises";
 import path from "path";
-import { head, list, put } from "@vercel/blob";
+import { get, put } from "@vercel/blob";
 import { unstable_noStore as noStore } from "next/cache";
 import type { SiteContent } from "./content-types";
 import { withDefaultExtrasCategory } from "./menu-defaults";
@@ -15,46 +15,26 @@ export function blobStorageConfigured() {
   );
 }
 
-function blobFetchOptions() {
-  return { cache: "no-store" as const, next: { revalidate: 0 } };
-}
-
-async function fetchBlobJson(url: string): Promise<SiteContent | null> {
-  const response = await fetch(
-    `${url}${url.includes("?") ? "&" : "?"}t=${Date.now()}`,
-    blobFetchOptions(),
-  );
-  if (!response.ok) {
-    return null;
-  }
-  return (await response.json()) as SiteContent;
-}
-
 async function readFromBlob(): Promise<SiteContent | null> {
   if (!blobStorageConfigured()) {
     return null;
   }
 
   try {
-    const meta = await head(BLOB_PATHNAME);
-    const url = meta.downloadUrl ?? meta.url;
-    return await fetchBlobJson(url);
-  } catch {
-    // head() misses — try listing (store connected via BLOB_STORE_ID)
-  }
+    const result = await get(BLOB_PATHNAME, {
+      access: "private",
+      useCache: false,
+    });
 
-  try {
-    const { blobs } = await list({ prefix: "fan-coffee/" });
-    const match =
-      blobs.find((b) => b.pathname === BLOB_PATHNAME) ?? blobs[0];
-    if (match?.url) {
-      return await fetchBlobJson(match.downloadUrl ?? match.url);
+    if (!result?.stream) {
+      return null;
     }
+
+    const text = await new Response(result.stream).text();
+    return JSON.parse(text) as SiteContent;
   } catch {
     return null;
   }
-
-  return null;
 }
 
 async function writeToBlob(content: SiteContent): Promise<void> {
