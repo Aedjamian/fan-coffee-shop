@@ -1,8 +1,15 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
-import { getSiteContent, isSiteContent, saveSiteContent } from "@/lib/content-store";
+import {
+  blobStorageConfigured,
+  getSiteContent,
+  isSiteContent,
+  saveSiteContent,
+} from "@/lib/content-store";
 import { requireAdminSession } from "@/lib/session";
 
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 export async function GET() {
   const content = await getSiteContent();
@@ -26,6 +33,19 @@ export async function PUT(request: Request) {
     return NextResponse.json({ error: "Invalid site content" }, { status: 400 });
   }
 
-  await saveSiteContent(body);
-  return NextResponse.json({ ok: true });
+  try {
+    await saveSiteContent(body);
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Could not save content.";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
+
+  revalidatePath("/");
+  revalidatePath("/admin/dashboard");
+
+  return NextResponse.json({
+    ok: true,
+    storage: blobStorageConfigured() ? "blob" : "file",
+  });
 }

@@ -1,9 +1,5 @@
-import { timingSafeEqual } from "crypto";
 import { NextResponse } from "next/server";
-import {
-  assertAuthConfig,
-  getAdminCredentials,
-} from "@/lib/auth-config";
+import { assertAuthConfig, findAdminAccount } from "@/lib/auth-config";
 import { getSession } from "@/lib/session";
 
 export async function POST(request: Request) {
@@ -28,27 +24,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const creds = getAdminCredentials();
-  const userOk = safeEqual(username, creds.username);
-  const passOk = safeEqual(password, creds.password);
-
-  if (!userOk || !passOk) {
+  const account = findAdminAccount(username, password);
+  if (!account) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
   const session = await getSession();
   session.isLoggedIn = true;
-  session.username = creds.username;
+  session.username = account.username;
   await session.save();
 
   return NextResponse.json({ ok: true });
-}
-
-function safeEqual(a: string, b: string) {
-  const bufA = Buffer.from(a);
-  const bufB = Buffer.from(b);
-  if (bufA.length !== bufB.length) {
-    return false;
-  }
-  return timingSafeEqual(bufA, bufB);
 }

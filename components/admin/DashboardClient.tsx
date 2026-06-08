@@ -76,14 +76,22 @@ export function DashboardClient({ initialContent, username }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(content),
       });
-      const data = (await response.json()) as { error?: string };
+      const data = (await response.json()) as {
+        error?: string;
+        storage?: string;
+      };
       if (!response.ok) {
         setStatus("error");
         setMessage(data.error ?? "Save failed.");
         return;
       }
       setStatus("saved");
-      setMessage("Changes saved. Refresh the homepage to preview.");
+      const preview = `/?preview=${Date.now()}`;
+      setMessage(
+        data.storage === "blob"
+          ? `Saved to Vercel Blob. Open the homepage (link above) or refresh — updates should appear right away.`
+          : `Saved locally. Refresh the homepage to preview.`,
+      );
       router.refresh();
     } catch {
       setStatus("error");
