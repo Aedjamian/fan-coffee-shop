@@ -63,7 +63,7 @@ async function writeToBlob(content: SiteContent): Promise<void> {
   }
 
   const result = await put(BLOB_PATHNAME, JSON.stringify(content, null, 2), {
-    access: "public",
+    access: "private",
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
